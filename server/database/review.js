@@ -1,13 +1,12 @@
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const reviews = new Schema({
-	id: {
+  id: {
     type: Number,
     required: true,
-	},
-	name: {
+  },
+  name: {
     type: String,
     required: true
   },
@@ -38,7 +37,7 @@ const reviews = new Schema({
   car_year: {
     type: Number,
     required: true
-  },
+  }
 });
 
-module.exports = mongoose.model('reviews', reviews);
+export default mongoose.model('reviews', reviews);
