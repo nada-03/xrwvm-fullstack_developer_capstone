@@ -70,3 +70,4 @@ class CarModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'car_make', 'type', 'year')
     list_filter = ('car_make', 'type', 'year')
     search_fields = ('name', 'car_make__name')
+

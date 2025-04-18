@@ -1,9 +1,7 @@
-# Uncomment the imports before you add the code
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
-
 
 app_name = 'djangoapp'
 urlpatterns = [
@@ -14,7 +12,7 @@ urlpatterns = [
     path(route='logout', view=views.logout_request, name='logout'),
     path(route='register', view=views.authenticate, name='register'),
     path(route='get_cars', view=views.get_cars, name='getcars'),
-    
+
     # Dealership paths
     path(
         route='get_dealers/',
@@ -37,8 +35,8 @@ urlpatterns = [
         name='dealer_details'
     ),
     path(route='add_review', view=views.add_review, name='add_review'),
+
     # path for dealer reviews view
 
     # path for add a review view
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
