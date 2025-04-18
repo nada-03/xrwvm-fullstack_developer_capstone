@@ -1,3 +1,5 @@
+
+/* jshint esversion: 8 */
 import express from 'express';
 import mongoose from 'mongoose';
 import fs from 'fs';
@@ -24,7 +26,6 @@ mongoose.connect("mongodb://mongo_db:27017/dealershipsDB", {
 })
 .then(() => {
   console.log("Connected to MongoDB");
-  // Initialize data
   initializeData();
 })
 .catch(err => {
@@ -35,10 +36,10 @@ async function initializeData() {
   try {
     await Reviews.deleteMany({});
     await Reviews.insertMany(reviewsData.reviews);
-
+    
     await Dealerships.deleteMany({});
     await Dealerships.insertMany(dealershipsData.dealerships);
-
+    
     console.log("Database initialized with sample data");
   } catch (error) {
     console.error("Error initializing data:", error);
@@ -127,12 +128,6 @@ app.post('/insert_review', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Error inserting review' });
   }
-});
-
-// Error handling middleware (fixed to avoid unused variable warnings)
-app.use((err, _req, res, _next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
 });
 
 // Start server

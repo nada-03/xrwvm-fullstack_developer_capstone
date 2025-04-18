@@ -1,4 +1,6 @@
+/* jshint esversion: 8 */
 import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
 
 const cars = new Schema({
