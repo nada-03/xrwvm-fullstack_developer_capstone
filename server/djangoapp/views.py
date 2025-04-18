@@ -3,7 +3,6 @@ import json
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .models import CarMake, CarModel
 from .restapis import get_request, analyze_review_sentiments, post_review
 
 logger = logging.getLogger(__name__)
